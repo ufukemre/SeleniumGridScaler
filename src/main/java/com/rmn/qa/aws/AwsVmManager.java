@@ -177,7 +177,11 @@ public class AwsVmManager implements VmManager {
     public List<Instance> launchNodes(final String amiId, final String instanceType, final int numberToStart,
             final String userData, final boolean terminateOnShutdown) throws NodesCouldNotBeStartedException {
         RunInstancesRequest runRequest = new RunInstancesRequest();
-        runRequest.withImageId(amiId).withInstanceType(instanceType).withMinCount(numberToStart)
+       // runRequest.withImageId(amiId)
+        runRequest.withImageId("ami-03238b70")
+       // .withInstanceType(instanceType)
+        .withInstanceType("t2.micro")
+        .withMinCount(numberToStart)
                   .withMaxCount(numberToStart).withUserData(userData);
         if (terminateOnShutdown) {
             runRequest.withInstanceInitiatedShutdownBehavior("terminate");
