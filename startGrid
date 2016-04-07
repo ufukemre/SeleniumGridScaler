@@ -1,8 +1,7 @@
-# check required params
 [ -z ${AWS_ACCESS_KEY} ] && echo "AWS_ACCESS_KEY MUST BE SET!" && exit 1
 [ -z ${AWS_SECRET_KEY} ] && echo "AWS_SECRET_KEY MUST BE SET!" && exit 1
 
-# set defaults
+
 [ -z ${IP_ADDRESS} ] && IP_ADDRESS=52.50.72.168
 
 java -DawsAccessKey="${AWS_ACCESS_KEY}" \
@@ -21,6 +20,6 @@ java -DawsAccessKey="${AWS_ACCESS_KEY}" \
 #-DipAddress="52.50.72.168" 
 #-hubConfig src/main/resources/hub.static.json 
 #-log grid.log 
-3-jettyMaxThreads 1024
+#-jettyMaxThreads 1024
 
 
