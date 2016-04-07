@@ -3,7 +3,7 @@
 [ -z ${AWS_SECRET_KEY} ] && echo "AWS_SECRET_KEY MUST BE SET!" && exit 1
 
 # set defaults
-[ -z ${IP_ADDRESS} ] && IP_ADDRESS=10.10.10.10
+[ -z ${IP_ADDRESS} ] && IP_ADDRESS=52.50.72.168
 
 java -DawsAccessKey="${AWS_ACCESS_KEY}" \
     -DawsSecretKey="${AWS_SECRET_KEY}" \
@@ -15,12 +15,12 @@ java -DawsAccessKey="${AWS_ACCESS_KEY}" \
 
 
 #-DPOOL_MAX=1024 
-#-DawsAccessKey=foo 
-#-DawsSecretKey=bar 
-#-DtotalNodeCount=300 
-#-DipAddress="10.10.10.10" 
+#-DawsAccessKey=AKIAJIK2AYNQADXNCXBQ 
+#-DawsSecretKey=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
+#-DtotalNodeCount=200 
+#-DipAddress="52.50.72.168" 
 #-hubConfig src/main/resources/hub.static.json 
 #-log grid.log 
-#-jettyMaxThreads 1024
+3-jettyMaxThreads 1024
 
 
