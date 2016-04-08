@@ -119,7 +119,7 @@ public class AwsVmManager implements VmManager {
     Properties initAWSProperties() {
         Properties properties = new Properties();
        // String propertiesLocation = System.getProperty("propertyFileLocation");
-      String propertiesLocation = System.getProperty("resources/aws.properties");
+      String propertiesLocation = System.getProperty("/resources/aws.properties");
 
         // If the user passed in an AWS config file, go ahead and use it instead of the default one
         if (propertiesLocation != null) {
