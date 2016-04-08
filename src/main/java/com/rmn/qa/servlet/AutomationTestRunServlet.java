@@ -156,11 +156,11 @@ public class AutomationTestRunServlet extends RegistryBasedServlet implements Re
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
-        String browserRequested = "firefox";
-      //  String browserRequested = request.getParameter("browser");
+       // String browserRequested = "firefox";
+       String browserRequested = request.getParameter("browser");
         String browserVersion = request.getParameter("browserVersion");
-        String osRequested = "linux";
-     //   String osRequested = request.getParameter("os");
+      //  String osRequested = "linux";
+       String osRequested = request.getParameter("os");
         String threadCount = request.getParameter("threadCount");
         String uuid = request.getParameter(AutomationConstants.UUID);
         // Return a 400 if any of the required parameters are not passed in

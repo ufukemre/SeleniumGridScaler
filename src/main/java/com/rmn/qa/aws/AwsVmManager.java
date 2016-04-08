@@ -118,7 +118,8 @@ public class AwsVmManager implements VmManager {
      */
     Properties initAWSProperties() {
         Properties properties = new Properties();
-        String propertiesLocation = System.getProperty("propertyFileLocation");
+        //String propertiesLocation = System.getProperty("propertyFileLocation");
+        String propertiesLocation = System.getProperty("/main/resources/");
 
         // If the user passed in an AWS config file, go ahead and use it instead of the default one
         if (propertiesLocation != null) {
@@ -177,10 +178,10 @@ public class AwsVmManager implements VmManager {
     public List<Instance> launchNodes(final String amiId, final String instanceType, final int numberToStart,
             final String userData, final boolean terminateOnShutdown) throws NodesCouldNotBeStartedException {
         RunInstancesRequest runRequest = new RunInstancesRequest();
-       // runRequest.withImageId(amiId)
-        runRequest.withImageId("ami-03238b70")
-       // .withInstanceType(instanceType)
-        .withInstanceType("t2.micro")
+     runRequest.withImageId(amiId)
+      //  runRequest.withImageId("ami-03238b70")
+      .withInstanceType(instanceType)
+      //  .withInstanceType("t2.micro")
         .withMinCount(numberToStart)
                   .withMaxCount(numberToStart).withUserData(userData);
         if (terminateOnShutdown) {
